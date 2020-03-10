@@ -3,7 +3,7 @@
 [ext_resource path="res://characters/Assets/workers2.png" type="Texture" id=1]
 [ext_resource path="res://characters/Character.gd" type="Script" id=2]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "down"
 length = 0.4
 tracks/0/type = "value"
@@ -35,8 +35,7 @@ tracks/0/keys = {
 "values": [ 69, 71, 70 ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "right"
+[sub_resource type="Animation" id=3]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:frame")
@@ -77,19 +76,18 @@ hframes = 12
 frame = 58
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/down = SubResource( 3 )
+anims/down = SubResource( 1 )
 anims/left = SubResource( 2 )
-anims/right = SubResource( 1 )
+anims/right = SubResource( 3 )
 anims/up = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( -160, 0 )
 current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
-smoothing_enabled = true
 smoothing_speed = 4.0
-drag_margin_left = 0.5
+drag_margin_left = 0.7
 drag_margin_top = 0.5
-drag_margin_right = 0.5
-drag_margin_bottom = 0.5
-editor_draw_screen = false
+drag_margin_right = 0.1
+drag_margin_bottom = 0.0

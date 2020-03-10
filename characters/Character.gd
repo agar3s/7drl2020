@@ -7,23 +7,13 @@ extends Node2D
 func _ready():
 	change_character()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_pressed("down"):
-		position.y += 32
-		$AnimationPlayer.play("down")
-	if Input.is_action_just_pressed("up"):
-		position.y -= 32
-		$AnimationPlayer.play("up")
-	if Input.is_action_just_pressed("right"):
-		position.x += 32
-		$AnimationPlayer.play("right")
-	if Input.is_action_just_pressed("left"):
-		$AnimationPlayer.play("left")
-		position.x -= 32
-	
-	if Input.is_action_just_pressed("change_character"):
-		change_character()
+func move_to(mov: Vector2):
+	self.position += mov
+	if mov.y > 0: $AnimationPlayer.play("down")
+	if mov.y < 0: $AnimationPlayer.play("up")
+	if mov.x < 0: $AnimationPlayer.play("left")
+	if mov.x > 0: $AnimationPlayer.play("right")
+		
 
 func change_character():
 	randomize()

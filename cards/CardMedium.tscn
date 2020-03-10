@@ -1,0 +1,196 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://zigurat/assets/1bitassets_1500.png" type="Texture" id=1]
+[ext_resource path="res://cards/CardMedium.gd" type="Script" id=2]
+[ext_resource path="res://resources/fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://resources/fonts/MiniSquare_8.tres" type="DynamicFont" id=4]
+[ext_resource path="res://cards/1bitassets.tres" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 1065, 86, 29, 9 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 750, 57, 8, 8 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 876, 85, 8, 8 )
+
+[node name="CardMedium" type="Container"]
+margin_right = 72.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 68, 96 )
+rect_pivot_offset = Vector2( 30, 45 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Border" type="ColorRect" parent="."]
+margin_left = -2.0
+margin_top = -2.0
+margin_right = 74.0
+margin_bottom = 102.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+
+[node name="BaseWhite" type="ColorRect" parent="."]
+margin_right = 72.0
+margin_bottom = 100.0
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="."]
+margin_left = 2.0
+margin_top = 14.0
+margin_right = 70.0
+margin_bottom = 98.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopBorder" type="ColorRect" parent="."]
+anchor_top = -0.054167
+anchor_bottom = -0.054167
+margin_left = 2.0
+margin_top = 58.4167
+margin_right = 70.0
+margin_bottom = 60.4167
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomBorder" type="ColorRect" parent="."]
+anchor_top = 0.278333
+anchor_bottom = 0.278333
+margin_left = 2.0
+margin_top = 59.1667
+margin_right = 70.0
+margin_bottom = 61.1667
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SubBorder" type="ColorRect" parent="."]
+anchor_left = 0.263889
+anchor_top = 0.278333
+anchor_right = 0.263889
+anchor_bottom = 0.278333
+margin_left = 2.0
+margin_top = 59.1667
+margin_right = 4.0
+margin_bottom = 71.1667
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Type" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = -4.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "magic"
+align = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( 20, 33 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = -0.0138889
+anchor_top = 0.06
+anchor_right = 0.013889
+anchor_bottom = 0.06
+margin_left = 4.0
+margin_top = 83.0
+margin_right = 19.0
+margin_bottom = 91.0
+custom_fonts/font = ExtResource( 4 )
+text = "x99"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.486111
+anchor_top = -0.66
+anchor_right = 0.5
+anchor_bottom = -0.66
+margin_left = 3.0
+margin_top = 84.0
+margin_right = 22.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 4 )
+text = "100"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = 0.486111
+anchor_top = -0.55
+anchor_right = 0.5
+anchor_bottom = -0.55
+margin_left = 3.0
+margin_top = 84.0
+margin_right = 22.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 4 )
+text = "40"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.0138889
+anchor_top = 0.04
+anchor_right = 0.0138889
+anchor_bottom = 0.04
+margin_left = 4.0
+margin_top = 52.0
+margin_right = 68.0
+margin_bottom = 80.0
+mouse_filter = 2
+custom_fonts/normal_font = ExtResource( 4 )
+text = "hp +5
+attack +3
+mana +2
+2"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loading" type="Sprite" parent="."]
+position = Vector2( 52.4189, 45.8609 )
+texture = SubResource( 2 )
+
+[node name="Cost" type="Node2D" parent="."]
+
+[node name="Mana" type="Sprite" parent="Cost"]
+modulate = Color( 0.9, 0.966667, 1, 1 )
+position = Vector2( 63.282, 21.6808 )
+texture = SubResource( 3 )
+
+[node name="Stamina" type="Sprite" parent="Cost"]
+modulate = Color( 1, 0.988333, 0.9, 1 )
+position = Vector2( 62.574, 33.6808 )
+texture = SubResource( 4 )
